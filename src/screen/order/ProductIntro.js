@@ -12,6 +12,15 @@ import {
   Pressable
 } from 'react-native';
 
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+import ProductDetail from './ProductDetail';
+
 function ProductIntro({item}) {
   console.log(item.img)
   return (
@@ -22,7 +31,7 @@ function ProductIntro({item}) {
                 borderRadius: 10,
                 backgroundColor: '#fff',
                 marginVertical: 5,
-              }} onPress={()=>{}}>
+              }} onPress={()=>console.log(item.name)}>
                 <View style={{flex: 1}}>
                 <Text style={{fontSize: 20, color: '#000'}}> {item.name} </Text>
                 <Text style={{fontSize: 20, color: '#000'}}> {item.price} </Text>

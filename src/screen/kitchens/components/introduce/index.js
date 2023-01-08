@@ -6,7 +6,7 @@ import styles from './style'
 const Introduce = () => {
   return(
     <View>
-      <View style={styles.header}>
+      <View style={{...styles.header}}>
         <Text style={styles.back}>B</Text>
         <View style={styles.headerText}>
           <Text style={{fontWeight: 'bold'}}>Bếp ăn hệ thống</Text>

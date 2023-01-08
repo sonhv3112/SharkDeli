@@ -33,6 +33,11 @@ const DescElement = [
     "Đồ uống", "Nước ngoài", "Đặc sản", "Đi chợ", 
     "Hot pick", "Món chay", "Bếp nhà", "Quán quen",
 ]
+const NavPage = [
+    "Kitchens", "Kitchens", "Kitchens", "Kitchens", 
+    "Kitchens", "Kitchens", "Kitchens", "Markets", 
+    "Kitchens", "Kitchens", "Kitchens", "Kitchens", 
+]
 
 const dimensions = Dimensions.get('window');
 const iconHeaderSize = Math.round(dimensions.height * 0.07); 
@@ -64,12 +69,12 @@ const SearchBar = (props) => {
 
 const ElementTable = (props) => { 
     return (
-        <View style={{...props.style, alignItems: 'center', justifyContent: 'center'}}>
+        <TouchableOpacity style={{...props.style, alignItems: 'center', justifyContent: 'center'}} onPress={props.onPress}>
             <props.icon width={props.style.height - 25} height={props.style.width - 25}/>
             <Text style={{fontSize: props.style.fontSize, fontWeight: 'bold',  color: '#000'}}> 
                 { props.description }
             </Text>
-        </View>
+        </TouchableOpacity>
     );
 }
 
@@ -79,22 +84,22 @@ const Table = (props) => {
     return (
         <>
             <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center'}}>
-                <ElementTable icon={IconArray[0]} description={DescElement[0]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[1]} description={DescElement[1]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[2]} description={DescElement[2]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[3]} description={DescElement[3]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
+                <ElementTable icon={IconArray[0]} description={DescElement[0]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[0])}/>
+                <ElementTable icon={IconArray[1]} description={DescElement[1]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[1])}/>
+                <ElementTable icon={IconArray[2]} description={DescElement[2]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[2])}/>
+                <ElementTable icon={IconArray[3]} description={DescElement[3]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[3])}/>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center'}}>
-                <ElementTable icon={IconArray[4]} description={DescElement[4]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[5]} description={DescElement[5]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[6]} description={DescElement[6]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[7]} description={DescElement[7]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
+                <ElementTable icon={IconArray[4]} description={DescElement[4]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[4])}/>
+                <ElementTable icon={IconArray[5]} description={DescElement[5]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[5])}/>
+                <ElementTable icon={IconArray[6]} description={DescElement[6]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[6])}/>
+                <ElementTable icon={IconArray[7]} description={DescElement[7]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[7])}/>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center'}}>
-                <ElementTable icon={IconArray[8]} description={DescElement[8]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[9]} description={DescElement[9]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[10]} description={DescElement[10]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
-                <ElementTable icon={IconArray[11]} description={DescElement[11]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}}/>
+                <ElementTable icon={IconArray[8]} description={DescElement[8]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[8])}/>
+                <ElementTable icon={IconArray[9]} description={DescElement[9]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[9])}/>
+                <ElementTable icon={IconArray[10]} description={DescElement[10]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[10])}/>
+                <ElementTable icon={IconArray[11]} description={DescElement[11]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[11])}/>
             </View>
         </>
     )
@@ -109,13 +114,13 @@ const BoomOrder = (props) => {
                     <Text style={{color: '#555', fontSize: 17, marginTop: 10, marginBottom: 10, }}>
                         Mỗi ngày có trung bình 30 - 40 đơn hàng bị bom. Hãy cùng chúng tôi giúp đỡ những tài xế.
                     </Text>
-                    <TouchableOpacity style={{height: '20%', width: '85%', backgroundColor: '#EB3136', borderRadius: 100, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}>
-                        <Text style={{fontWeight: 'bold', fontSize: 18, color: '#fff'}}> Giải cứu ngay </Text>
+                    <TouchableOpacity style={{height: '25%', width: '85%', backgroundColor: '#EB3136', borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}>
+                        <Text style={{fontWeight: 'bold', fontSize: 18, color: '#fff', marginRight: 10}}> Giải cứu ngay </Text>
                         <ForwardIcon width={Math.round(dimensions.height * 0.04)} height={Math.round(dimensions.height * 0.04)} fill="#fff" style={{position: 'absolute', right: 10}}/>
                     </TouchableOpacity>
                 </View>
                 <View style={{position: 'absolute', right: 5, transform: [{ translateY: -5 }], height: dimensions.width * 0.35, width: dimensions.width * 0.35, backgroundColor: '#EB3136'}}/>
-                <Image source={require('../../assets/background.png')} style={{height: dimensions.width * 0.35, width: dimensions.width * 0.35, backgroundColor: '#EB3136'}}/>
+                <Image source={require('../../assets/boom.png')} style={{height: dimensions.width * 0.35, width: dimensions.width * 0.35, backgroundColor: '#EB3136'}}/>
             </View>
         </>
     );
@@ -124,15 +129,15 @@ const BoomOrder = (props) => {
 const DealHot = (props) => { 
     return (
         <View style={{width: '100%', height: dimensions.height * 0.35, padding: 10, justifyContent: 'flex-end', flexDirection: 'row', ...props.style}}>
-            <Image source={require('../../assets/background.png')} style={{position: 'absolute', left: 10, bottom: 10, height: '90%', width: '35%', borderTopLeftRadius: 70, borderBottomRightRadius: 70}}/>
+            <Image source={require('../../assets/house.png')} style={{position: 'absolute', left: 10, bottom: 10, height: '90%', width: '35%', borderTopLeftRadius: 70, borderBottomRightRadius: 70}}/>
             <View style={{height: '95%', width: '20%', backgroundColor: '#EDF3FF', zIndex: -1, }}/>
             <View style={{height: '95%', width: '65%', backgroundColor: '#EDF3FF', zIndex: -2, borderTopRightRadius: 90, justifyContent: 'center', alignItems: 'center'}}>
                     <Text style={{color: '#EB3136', fontWeight: 'bold', fontSize: 18, color: '#0066A8', marginRight: 10, }}> Deal hot chào tháng 11 </Text>
                     <Text style={{color: '#555', fontSize: 17, marginTop: 10, marginBottom: 10, width: '80%'}}>
                         Chúng tôi có rất nhiều ưu đãi chờ bạn khám phá, đặt đồ ăn ngay nào.
                     </Text>
-                    <TouchableOpacity style={{height: '17%', width: '75%', backgroundColor: '#0066A8', borderRadius: 100, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}>
-                        <Text style={{fontWeight: 'bold', fontSize: 18, color: '#fff'}}> Đặt hàng ngay </Text>
+                    <TouchableOpacity style={{height: '21%', width: '75%', backgroundColor: '#0066A8', borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}>
+                        <Text style={{fontWeight: 'bold', fontSize: 18, color: '#fff', marginRight: 10}}> Đặt hàng ngay </Text>
                         <ForwardIcon width={Math.round(dimensions.height * 0.03)} height={Math.round(dimensions.height * 0.03)} fill="#fff" style={{position: 'absolute', right: 10}}/>
                     </TouchableOpacity>
             </View>
@@ -145,7 +150,7 @@ export const Home = ({navigation}) => {
         <ScrollView  style={styles.container}>
             <Header style={{ marginTop: 10,}}/>
             <SearchBar style={{ marginTop: 20, marginBottom: 20, }} />
-            <Table/>
+            <Table navigation={navigation}/>
             <BoomOrder style={{marginTop: 20, }}/>
             <DealHot style={{marginTop: 20, }}/>
         </ScrollView>

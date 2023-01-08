@@ -120,7 +120,6 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		marginBottom: 15, 
 		alignItems: 'center', 
-		position: 'absolute',
 		bottom: 10, 
 	}, 
 	textSubmit: {

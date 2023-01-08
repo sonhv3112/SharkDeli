@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import BouncyCheckbox from "react-native-bouncy-checkbox"
+import BouncyCheckbox from "react-native-bouncy-checkbox";
 import {
   Image,
   SafeAreaView,
@@ -15,6 +15,14 @@ import {
   Alert,
   FlatList
 } from 'react-native';
+
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
 
 const size = ['M', 'L']
 const topping = ['Trân châu đen', 'Trân châu trăng', 'Thạch trái cây', 'Trân châu thủy tinh']
@@ -33,7 +41,7 @@ function ProductDetail(props) {
   };
   return (
     <ScrollView style={styles.container}>
-      <Image style={styles.image} source={require('../../assets/background.png')} />
+      <Image style={styles.image} source={require('../../../IMG/home.jpg')} />
       <View style={{
                 flexDirection: 'row',
                 borderWidth: 1,

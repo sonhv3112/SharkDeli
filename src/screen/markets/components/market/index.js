@@ -12,7 +12,7 @@ const Market = (props) => {
       
       <View style={styles.center}>
         <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
-        <Text style={{fontSize: 8}}>{props.tyle}</Text>
+        <Text style={{fontSize: 12}}>{props.tyle}</Text>
       </View>
       
       <View style={styles.bottom}>

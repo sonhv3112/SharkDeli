@@ -22,7 +22,7 @@ const Tea = [
           topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
           price: "30.000đ",
           priceNum: 30000,
-          img: require('../../assets/background.png')
+          img: require('../../../IMG/Tea.jpg')
         },
         {
           name: "Trà sữa trân châu",
@@ -30,7 +30,7 @@ const Tea = [
           topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
           price: "30.000đ",
           priceNum: 30000,
-          img: require('../../assets/background.png')
+          img: require('../../../IMG/Tea.jpg')
         }
       ]
 const Coffe = [
@@ -40,7 +40,7 @@ const Coffe = [
           topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
           price: "30.000đ",
           priceNum: 30000,
-          img: require('../../assets/background.png')
+          img: require('../../../IMG/Coffe.jpg')
         },
         {
           name: "Espresso",
@@ -48,7 +48,7 @@ const Coffe = [
           topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
           price: "30.000đ",
           priceNum: 30000,
-          img: require('../../assets/background.png')
+          img: require('../../../IMG/Coffe.jpg')
         },
       ]
 
@@ -64,7 +64,7 @@ import ProductIntro from './ProductIntro';
 function Orderscreen(props) {
   return (
     <ScrollView style={styles.container}>
-      <Image style={styles.image} source={require('../../assets/background.png')} />
+      <Image style={styles.image} source={require('../../../IMG/home.jpg')} />
       <Text style={styles.title}>Phúc Long Nguyễn - Thị Minh Khai </Text>
       <Text style={styles.subtitle} numberOfLines={1}> 2.8km 124 Nguyễn Thị Minh Khai quận 5 TP. Hồ Chí Minh</Text>
       <Text style={styles.status}>Đang mở cửa</Text>

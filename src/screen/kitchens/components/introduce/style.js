@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: 20,
     marginHorizontal: 10,
-    height: 20,
+    height: 40,
     alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
   },
   back: {
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingRight: 10,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   introduce: {
     height: 160,
