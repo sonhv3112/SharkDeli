@@ -1,4 +1,6 @@
 import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
   Image,
   SafeAreaView,
@@ -12,7 +14,9 @@ import {
   FlatList,
   ScroolView,
   Button,
-  Alert
+  Alert,
+  ImageBackground,
+  TouchableOpacity
 } from 'react-native';
 
 const Tea = [
@@ -61,36 +65,58 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import ProductIntro from './ProductIntro';
 
-function Orderscreen(props) {
+function Orderscreen({navigation, route}) {
+  const item = route.params.propItem; 
+
   return (
     <ScrollView style={styles.container}>
-      <Image style={styles.image} source={require('../../../IMG/home.jpg')} />
-      <Text style={styles.title}>Phúc Long Nguyễn - Thị Minh Khai </Text>
-      <Text style={styles.subtitle} numberOfLines={1}> 2.8km 124 Nguyễn Thị Minh Khai quận 5 TP. Hồ Chí Minh</Text>
-      <Text style={styles.status}>Đang mở cửa</Text>
-      <View style={{borderBottomColor: 'black', borderBottomWidth: StyleSheet.hairlineWidth, }}/>
-      <Button style={styles.button} color={"cyan"} title="Giao bởi người giao hàng" onPress={() => Alert.alert('Giao hang')}/>
+      <ImageBackground source={require('../../../IMG/home.jpg')} resizeMode="cover" style={styles.image}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', }}>
+          <TouchableOpacity style={{}} onPress={()=>navigation.goBack()}>
+              <AntDesign name='arrowleft' style={{fontSize:22, marginRight:20,paddingTop: 10, marginLeft:10}}></AntDesign>
+          </TouchableOpacity>
+          <TouchableOpacity style={{flexDirection: 'row', alignSelf: "flex-end", paddingTop: '2%', paddingRight:'2%'}} onPress={()=>navigation.navigate('Chat')}>
+            <Ionicons name='chatbubble-ellipses-outline' size={32} color='white' style={{}}></Ionicons>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+      <View style={{paddingLeft: 15, paddingRight: 15}}>
+      <View>
+        <Text style={styles.title}>{item.name_shop}</Text>
+        <Text style={styles.subtitle} numberOfLines={1}> {item.content + ' ' + item.address} </Text>
+        <Text style={styles.status}>Đang mở cửa</Text>
+      </View>
+      <TouchableOpacity 
+                onPress={() => {}} 
+                style={styles.button}> 
+                    <Text style={styles.TextStyle}> Giao bởi người giao hàng </Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+                onPress={() => {}} 
+                style={styles.button2}> 
+                    <Text style={styles.TextStyle}> Mã giảm giá </Text>
+      </TouchableOpacity>
 
-      <Button style={styles.button}  title="Mã giảm giá" onPress={() => Alert.alert('Giam gia')}/>
         <View> 
           <Text style={{flex: 1,color: '#000', width: 300, fontSize: 20, fontWeight: 'bold'}}> Tea </Text>
           <FlatList 
             data={Tea}
             renderItem={({item}) => (
-              <ProductIntro item={item} />
+              <ProductIntro item={item} navigation={navigation}/>
             )}
             showsVerticalScrollIndicator={false}
           />
-        </View>
+        </View> 
         <View> 
           <Text style={{flex: 1, color: '#000', width: 300, fontSize: 20, fontWeight: 'bold'}}> Coffe </Text>
           <FlatList 
             data={Coffe}
             renderItem={({item}) => (
-              <ProductIntro item={item} />
+              <ProductIntro item={item} navigation={navigation}/>
             )}showsVerticalScrollIndicator={false}
           />
         </View>
+      </View>
     </ScrollView>
   );
 }
@@ -112,7 +138,7 @@ const styles = StyleSheet.create({
    title: { 
     color: "#000",
     fontWeight: 'bold',
-    fontSize: 25
+    fontSize: 22
   },
   subtitle: { 
     color: "#000",
@@ -131,12 +157,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginVertical: 5,
   },
-  button: {
-    borderWidth: 1,
-    borderColor: '#d1d1d1',
-    borderRadius: 10,
-    backgroundColor: '#fff',
-    marginVertical: 5,
-  }
+  button: { 
+    backgroundColor:'cyan',
+    borderRadius:15,
+    borderColor: '#fff'
+  },
+  button2: { 
+    backgroundColor:'#0e46ed',
+    borderRadius:15,
+    borderColor: '#fff'
+  },
+  homeImg: {
+    width: "100%",
+    height: 200,
+  },
+  messageButton: {
+    alignSelf: "flex-end",
+    width: 50,
+    height: 50,
+  },
+  TextStyle:{
+    color:'#fff',
+    textAlign:'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
 });
 export default Orderscreen;

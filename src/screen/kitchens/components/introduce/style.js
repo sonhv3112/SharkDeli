@@ -10,13 +10,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   back: {
-    width: 10,
+    width: 20,
+    resizeMode: 'contain',
   },
   headerText: {
     flex: 1,
     paddingRight: 10,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   introduce: {
     height: 160,
@@ -32,11 +32,12 @@ const styles = StyleSheet.create({
     height: 60,
   },
   introduceText: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   introduceLeftBottom: {
     justifyContent: 'center',
+    fontSize: 14,
   },
   introduceRight: {
     flex: 44,

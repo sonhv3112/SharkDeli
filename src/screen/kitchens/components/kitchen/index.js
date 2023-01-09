@@ -11,12 +11,12 @@ const Kitchen = (props) => {
       </View>
       
       <View style={styles.center}>
-        <Text style={{fontWeight: 'bold'}}>Bếp ăn {props.name}</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 16}}>Bếp ăn {props.name}</Text>
         <Text>SHARKDELI</Text>
         <View>
           {
             props.foods.map((i, index) => {
-              return <Text style={{color: 'blue', fontSize: 12}}>
+              return <Text style={{color: '#22a0cd', fontSize: 12}}>
                 * {i}
               </Text>
           })

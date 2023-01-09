@@ -21,8 +21,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import ProductDetail from './ProductDetail';
 
-function ProductIntro({item}) {
-  console.log(item.img)
+function ProductIntro({item, navigation}) {
   return (
             <Pressable style={{
                 flexDirection: 'row',
@@ -31,7 +30,9 @@ function ProductIntro({item}) {
                 borderRadius: 10,
                 backgroundColor: '#fff',
                 marginVertical: 5,
-              }} onPress={()=>console.log(item.name)}>
+              }} onPress={()=>navigation.navigate('ProductDetail', {
+                propItem: item
+              })}>
                 <View style={{flex: 1}}>
                 <Text style={{fontSize: 20, color: '#000'}}> {item.name} </Text>
                 <Text style={{fontSize: 20, color: '#000'}}> {item.price} </Text>

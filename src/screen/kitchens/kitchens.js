@@ -25,10 +25,10 @@ const data = [
   }
 ];
 
-export default function Kitchens() {
+export default function Kitchens({navigation}) {
   return (
     <View style={styles.container}>
-      <Introduce/>
+      <Introduce navigation={navigation}/>
       <ScrollView contentContainerStyle={{
         flexDirection: 'row',
         flexWrap: 'wrap'}}

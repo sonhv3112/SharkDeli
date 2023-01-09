@@ -287,17 +287,19 @@ const Footer = (props) => {
   }
 
 
-export default BoomDealDetail = ({navigation}) => {
+export default BoomDealDetail = ({navigation, route}) => {
   // TODO: Render data from id_order...
-  const item = stories[1];
+  const item = route.params.propItem;
 
   const onBackButtonPress = () => {
     // TODO: Return previous screen
+    navigation.goBack(); 
     console.log('Pressed Back');
   }
 
   const onBuyButtonPress = () => {
     // TODO: Navigate to Payment screen
+
     console.log('Pressed Buy');
   }
     

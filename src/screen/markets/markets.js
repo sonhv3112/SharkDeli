@@ -31,10 +31,10 @@ const data = [
   },
 ];
 
-export default function Markets() {
+export default function Markets({navigation}) {
   return (
     <View style={styles.container}>
-      <Introduce />
+      <Introduce navigation={navigation}/>
       <ScrollView contentContainerStyle={{
         flexDirection: 'row',
         flexWrap: 'wrap'}}

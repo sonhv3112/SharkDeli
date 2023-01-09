@@ -42,7 +42,7 @@ const RecMessage = ({content, time}) => {
 };
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
-const Chat = () => {
+const Chat = ({navigation}) => {
 const [text, setText] = React.useState("");
 const [index, setIndex] = React.useState(0);
 const updateMess = () => {
@@ -62,7 +62,7 @@ const updateMess = () => {
   return (
      <SafeAreaView>
          <View style={{...styles.titleHeader, alignItems: 'center',}}>
-         <TouchableOpacity style={{}}>
+         <TouchableOpacity style={{}} onPress={()=>navigation.goBack()}>
             <AntDesign name='arrowleft' style={{fontSize:22, marginRight:20,paddingTop: 10, marginLeft:10}}></AntDesign>
          </TouchableOpacity>
          <View>

@@ -43,7 +43,12 @@ export const SignUp = ({navigation}) => {
 		</Text>
 		<TextInput style={styles.textInputForm} placeholder='Re-password'/>
 
-		<TouchableOpacity style={styles.submitButton} onPress={() => {}}>
+		<Text style={styles.textForm}>
+			Chọn vai trò
+		</Text>
+		<TextInput style={styles.textInputForm} placeholder='Re-password'/>
+
+		<TouchableOpacity style={styles.submitButton} onPress={() => navigation.goBack()}>
 			<Text style={styles.textSubmit}> Đăng ký </Text>    
 		</TouchableOpacity>
 		
@@ -56,7 +61,7 @@ export const SignUp = ({navigation}) => {
 
 const styles = StyleSheet.create({
 	container: {
-	flex: 1,
+		flex: 1,
 		backgroundColor: '#fff',
 		alignItems: 'center', 
 	},
@@ -100,7 +105,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold', 
 		marginLeft: 20,
 		marginBottom: 5,
-		marginTop: 15, 
+		marginTop: 10, 
 	},
 	textInputForm: {
 		width: '90%', 
@@ -118,9 +123,8 @@ const styles = StyleSheet.create({
 		borderRadius:30,
 		borderColor: '#fff',
 		alignSelf: 'center',
-		marginBottom: 15, 
+		marginTop: 10, 
 		alignItems: 'center', 
-		bottom: 10, 
 	}, 
 	textSubmit: {
 		fontSize: 16, 

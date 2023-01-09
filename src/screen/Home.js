@@ -20,6 +20,7 @@ import Icon9 from '../../assets/icon-09.svg';
 import Icon10 from '../../assets/icon-10.svg'; 
 import Icon11 from '../../assets/icon-11.svg'; 
 import Icon12 from '../../assets/icon-12.svg';
+import aa from '../../assets/aa.svg'
 
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -27,16 +28,19 @@ const IconArray = [
     Icon1, Icon2, Icon3, Icon4, 
     Icon5, Icon6, Icon7, Icon8, 
     Icon9, Icon10, Icon11, Icon12, 
+    aa, 
 ];
 const DescElement = [
     "Deal hời", "Cơm", "Miến mì", "Fast food", 
     "Đồ uống", "Nước ngoài", "Đặc sản", "Đi chợ", 
     "Hot pick", "Món chay", "Bếp nhà", "Quán quen",
+    "Đối tác SHARKDELI"
 ]
 const NavPage = [
-    "Kitchens", "Kitchens", "Kitchens", "Kitchens", 
+    "HotDeal", "Kitchens", "Kitchens", "Kitchens", 
     "Kitchens", "Kitchens", "Kitchens", "Markets", 
     "Kitchens", "Kitchens", "Kitchens", "Kitchens", 
+    "HotDeal"
 ]
 
 const dimensions = Dimensions.get('window');
@@ -67,7 +71,7 @@ const SearchBar = (props) => {
     );
 }
 
-const ElementTable = (props) => { 
+const ElementTable = (props) => {       
     return (
         <TouchableOpacity style={{...props.style, alignItems: 'center', justifyContent: 'center'}} onPress={props.onPress}>
             <props.icon width={props.style.height - 25} height={props.style.width - 25}/>
@@ -101,6 +105,9 @@ const Table = (props) => {
                 <ElementTable icon={IconArray[10]} description={DescElement[10]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[10])}/>
                 <ElementTable icon={IconArray[11]} description={DescElement[11]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[11])}/>
             </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center'}}>
+                <ElementTable icon={IconArray[12]} description={DescElement[12]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[12])}/>
+            </View>
         </>
     )
 }
@@ -114,7 +121,9 @@ const BoomOrder = (props) => {
                     <Text style={{color: '#555', fontSize: 17, marginTop: 10, marginBottom: 10, }}>
                         Mỗi ngày có trung bình 30 - 40 đơn hàng bị bom. Hãy cùng chúng tôi giúp đỡ những tài xế.
                     </Text>
-                    <TouchableOpacity style={{height: '25%', width: '85%', backgroundColor: '#EB3136', borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}>
+                    <TouchableOpacity style={{height: '25%', width: '85%', backgroundColor: '#EB3136', borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', marginTop: 10, }}
+                        onPress={() => props.navigation.navigate('BoomDealIntro')}
+                    >
                         <Text style={{fontWeight: 'bold', fontSize: 18, color: '#fff', marginRight: 10}}> Giải cứu ngay </Text>
                         <ForwardIcon width={Math.round(dimensions.height * 0.04)} height={Math.round(dimensions.height * 0.04)} fill="#fff" style={{position: 'absolute', right: 10}}/>
                     </TouchableOpacity>
@@ -151,7 +160,7 @@ export const Home = ({navigation}) => {
             <Header style={{ marginTop: 10,}}/>
             <SearchBar style={{ marginTop: 20, marginBottom: 20, }} />
             <Table navigation={navigation}/>
-            <BoomOrder style={{marginTop: 20, }}/>
+            <BoomOrder style={{marginTop: 20, }} navigation={navigation}/>
             <DealHot style={{marginTop: 20, }}/>
         </ScrollView>
     );

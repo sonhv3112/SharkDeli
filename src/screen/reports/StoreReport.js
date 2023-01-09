@@ -151,7 +151,7 @@ const Body = (props) => {
     );
   }
   
-export const StoreReport = ({navigation}) => {
+const StoreReport = ({navigation}) => {
     const formik = useFormik({
         initialValues: {
           id_shop: stories.id_shop,
@@ -303,3 +303,5 @@ const color = {
       marginTop: 10
     }
   });
+
+export default StoreReport;

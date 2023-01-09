@@ -13,7 +13,8 @@ import {
   Pressable,
   Button,
   Alert,
-  FlatList
+  FlatList,
+  TouchableOpacity
 } from 'react-native';
 
 import {
@@ -24,21 +25,41 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const size = ['M', 'L']
-const topping = ['Trân châu đen', 'Trân châu trăng', 'Thạch trái cây', 'Trân châu thủy tinh']
+// const size = ['M', 'L']
+// const topping = ['Trân châu đen', 'Trân châu trăng', 'Thạch trái cây', 'Trân châu thủy tinh']
 const PriceNum = 30000
-function ProductDetail(props) {
+
+// const Tea = [
+//   {
+//     name: "Trà đào cam sả",
+//     size: ['M', 'L'],
+//     topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
+//     price: "30.000đ",
+//     priceNum: 30000,
+//     img: require('../../../IMG/Tea.jpg')
+//   },
+//   {
+//     name: "Trà sữa trân châu",
+//     size: ['M', 'L'],
+//     topping: ["Trân châu đen", "Trân châu trăng", "Thạch trái cây", "Trân châu thủy tinh"],
+//     price: "30.000đ",
+//     priceNum: 30000,
+//     img: require('../../../IMG/Tea.jpg')
+//   }
+// ]
+
+function ProductDetail({navigation, route}) {
   const [quantity, setQuantity] = useState(1)
-  const [price, setPrice] = useState(PriceNum)
   const onMinus = () => {
     setQuantity(Math.max(1,quantity-1))
-    setPrice(Math.max(0,price-PriceNum))
   };
 
   const onPlus = () => {
     setQuantity(quantity+1)
-    setPrice(Math.max(0,price+PriceNum))
   };
+
+  const item = route.params.propItem; 
+
   return (
     <ScrollView style={styles.container}>
       <Image style={styles.image} source={require('../../../IMG/home.jpg')} />
@@ -50,8 +71,8 @@ function ProductDetail(props) {
                 backgroundColor: '#fff',
                 marginVertical: 5,
               }}>
-        <Text style={styles.title}> Trà đào cam sả</Text>
-        <Text style={{flex: 1, textAlign: 'right', fontSize: 20}}> 30.000đ  </Text>
+        <Text style={styles.title}>{item.name}</Text>
+        <Text style={{flex: 1, textAlign: 'right', fontSize: 20}}>{item.price}</Text>
       </View>
       <View>
         <TextInput style={styles.note} defaultValue='Ghi chú cho nhà hàng'>
@@ -62,7 +83,7 @@ function ProductDetail(props) {
             Chọn size
         </Text>
         <View style={styles.container}>
-          {size.map(d => {
+          {item.size.map(d => {
             return (<View style={{flexDirection: 'row'}}>
                     <BouncyCheckbox
                       width={30}
@@ -83,7 +104,7 @@ function ProductDetail(props) {
         </Text>
 
         <View style={styles.container}>
-          {topping.map(d => {
+          {item.topping.map(d => {
             return (<View style={{flexDirection: 'row'}}>
                     <BouncyCheckbox
                       width={30}
@@ -110,7 +131,12 @@ function ProductDetail(props) {
               <Text style={styles.butonText}>+</Text>
             </Pressable>
           </View>
-          <Button style={styles.button} title={"Thêm " + String(price) + "đ"} onPress={() => Alert.alert('Da them')}/>
+          {/*<Button style={styles.button} title={"Thêm " + String(price) + "đ"} onPress={() => Alert.alert('Da them')}/>*/}
+          <TouchableOpacity 
+                onPress={() => {}} 
+                style={styles.button}> 
+                    <Text style={styles.TextStyle}> {"Thêm " + String(quantity * item.priceNum) + "đ"} </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -183,8 +209,18 @@ const styles = StyleSheet.create({
       color: '#007eb9',
     },
     button: {
-      flex: 1,
+      backgroundColor:'#0e46ed',
+      borderColor: '#fff',
+      alignItems: 'center',
+      alignSelf: 'auto',
+      borderRadius: 20,
+    },
+    TextStyle:{
+      color:'#fff',
+      textAlign:'center',
+      fontSize: 17,
+      fontWeight: 'bold',
       alignSelf: 'center'
-    }
+    },
   });
 export default ProductDetail;

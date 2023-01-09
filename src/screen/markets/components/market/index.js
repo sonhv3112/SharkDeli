@@ -11,8 +11,8 @@ const Market = (props) => {
       </View>
       
       <View style={styles.center}>
-        <Text style={{fontWeight: 'bold'}}>{props.name}</Text>
-        <Text style={{fontSize: 12}}>{props.tyle}</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 16}}>{props.name}</Text>
+        <Text style={{fontSize: 14}}>{props.tyle}</Text>
       </View>
       
       <View style={styles.bottom}>

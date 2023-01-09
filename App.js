@@ -19,6 +19,9 @@ import BoomDealReport from './src/screen/reports/BoomDealReport';
 import StoreReport from './src/screen/reports/StoreReport';
 import BoomDealDetail from './src/screen/rescue/BoomDealDetail';
 import BoomDealIntro from './src/screen/rescue/BoomDealIntro';
+import HotDeal from './src/screen/HotDeal';
+import PayScreen from './src/screen/order/PayScreen';
+import MyOrder from './src/screen/MyOrder';
 
 import StoreProvider from './src/store/StoreProvider';
 
@@ -29,19 +32,22 @@ const App = () => {
     <StoreProvider>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Start" component={Start} options={{headerShown: false}} /> 
+          {/* <Stack.Screen name="Start" component={Start} options={{headerShown: false}} /> 
           <Stack.Screen name="Login" component={Login} options={{headerShown: false}} /> 
           <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}} /> 
           <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />  
+          <Stack.Screen name="HotDeal" component={HotDeal} options={{headerShown: false}} />  
           <Stack.Screen name="Kitchens" component={Kitchens} options={{headerShown: false}} />
           <Stack.Screen name="Markets" component={Markets} options={{headerShown: false}} />  
           <Stack.Screen name="ProductDetail" component={ProductDetail} options={{headerShown: false}} /> 
           <Stack.Screen name="Orderscreen" component={Orderscreen} options={{headerShown: false}} /> 
-          <Stack.Screen name="Chat" component={Chat} options={{headerShown: false}} />  
-          {/* <Stack.Screen name="BoomDealReport" component={BoomDealReport} options={{headerShown: false}} /> 
+          <Stack.Screen name="Chat" component={Chat} options={{headerShown: false}} />   
+          <Stack.Screen name="BoomDealReport" component={BoomDealReport} options={{headerShown: false}} /> 
           <Stack.Screen name="StoreReport" component={StoreReport} options={{headerShown: false}} /> 
-          <Stack.Screen name="BoomDealDetail" component={BoomDealDetail} options={{headerShown: false}} /> 
-          <Stack.Screen name="BoomDealIntro" component={BoomDealIntro} options={{headerShown: false}} />  */}
+          <Stack.Screen name="BoomDealIntro" component={BoomDealIntro} options={{headerShown: false}} />  
+          <Stack.Screen name="BoomDealDetail" component={BoomDealDetail} options={{headerShown: false}} />
+          <Stack.Screen name="PayScreen" component={PayScreen} options={{headerShown: false}} /> */}
+          <Stack.Screen name="MyOrder" component={MyOrder} options={{headerShown: false}} />
         </Stack.Navigator>
       </NavigationContainer>
     </StoreProvider>

@@ -9,99 +9,16 @@ import { FlatList, State } from 'react-native-gesture-handler';
 const dimensions = Dimensions.get('window');
 const iconSize = Math.round(dimensions.height * 0.07)- 10;
 
-// const stories = [
-//   {
-//     id: 0,
-//     id_order: 'DH_JSKJFDEICM',
-//     title: 'Combo Gà Rán',
-//     content: 'Combo gà rán King: 1 đùi gà + 1 nước + 1 hambuger',
-//     old_price: 95000,
-//     new_price: 80000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/0.png')
-//   },
-//   {
-//     id: 1,
-//     id_order: 'DH_JDVJRJEKDD',
-//     title: 'Trà Vải Phúc Long',
-//     content: 'Trà nhài vải Size L',
-//     old_price: 55000,
-//     new_price: 40000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/1.png')
-//   },
-//   {
-//     id: 2,
-//     id_order: 'DH_FFFDESVNFK',
-//     title: 'Bún Riêu Quán Hương',
-//     content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/2.png')
-//   },
-//   {
-//     id: 3,
-//     id_order: 'DH_KJHUSNMROS',
-//     title: 'Lẩu Bò Nhà Gỗ',
-//     content: '300 gram bò, rau, củ, bún, mì',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/3.png')
-//   },
-//   {
-//     id: 4,
-//     id_order: 'DH_FFFDSVNFK',
-//     title: 'Bún Riêu Quán Hương',
-//     content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/2.png')
-//   },
-//   {
-//     id: 5,
-//     id_order: 'DH_KJHUSMROS',
-//     title: 'Lẩu Bò Nhà Gỗ',
-//     content: '300 gram bò, rau, củ, bún, mì',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/3.png')
-//   },
-//   {
-//     id: 6,
-//     id_order: 'DH_FFFDSVNFK',
-//     title: 'Bún Riêu Quán Hương',
-//     content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/2.png')
-//   },
-//   {
-//     id: 7,
-//     id_order: 'DH_KJHUSMROS',
-//     title: 'Lẩu Bò Nhà Gỗ',
-//     content: '300 gram bò, rau, củ, bún, mì',
-//     old_price: 58000,
-//     new_price: 45000,
-//     unit: 'đ',
-//     img: require('../../../assets/BoomDealIntro/3.png')
-//   }
-// ]
-
 const stories = [
   {
     id: 0,
     id_order: 'DH_JSKJFDEICM',
     title: 'Combo Gà Rán',
-    content: 'Combo gà rán King: 1 đùi gà + 1 nước + 1 hambuger',
+    content: '0.1 km',
     old_price: 95000,
     new_price: 80000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/0.png'),
+    img: require('../../assets/BoomDealIntro/0.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Jolibee Cao Thắng',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -114,13 +31,13 @@ const stories = [
     id: 1,
     id_order: 'DH_JDVJRJEKDD',
     title: 'Trà Vải Phúc Long',
-    content: 'Trà nhài vải Size L',
+    content: '0.5 km',
     old_price: 55000,
     new_price: 40000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/1.png'),
+    img: require('../../assets/BoomDealIntro/1.png'),
     id_shop: 'CH_SJNJVJDKKDN',
-    name_shop: 'Phúc Long',
+    name_shop: 'Phúc Long - Nguyễn Thị Minh Khai',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
     id_shipper: 'GH_NSKKDWJFJ',
     name_shipper: 'Trần Hoài Anh',
@@ -131,11 +48,11 @@ const stories = [
     id: 2,
     id_order: 'DH_FFFDESVNFK',
     title: 'Bún Riêu Quán Hương',
-    content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
+    content: '0.2 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/2.png'),
+    img: require('../../assets/BoomDealIntro/2.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Jolibee Cao Thắng',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -148,11 +65,11 @@ const stories = [
     id: 3,
     id_order: 'DH_KJHUSNMROS',
     title: 'Lẩu Bò Nhà Gỗ',
-    content: '300 gram bò, rau, củ, bún, mì',
+    content: '1 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/3.png'),
+    img: require('../../assets/BoomDealIntro/3.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Jolibee Cao Thắng',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -165,11 +82,11 @@ const stories = [
     id: 4,
     id_order: 'DH_FFFDSVNFK',
     title: 'Bún Riêu Quán Hương',
-    content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
+    content: '1.2 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/2.png'),
+    img: require('../../assets/BoomDealIntro/2.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Jolibee Cao Thắng',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -182,11 +99,11 @@ const stories = [
     id: 5,
     id_order: 'DH_KJHUSMROS',
     title: 'Lẩu Bò Nhà Gỗ',
-    content: '300 gram bò, rau, củ, bún, mì',
+    content: '3 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/3.png'),
+    img: require('../../assets/BoomDealIntro/3.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Jolibee Cao Thắng',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -199,11 +116,11 @@ const stories = [
     id: 6,
     id_order: 'DH_FFFDSVNFK',
     title: 'Bún Riêu Quán Hương',
-    content: 'Bún riêu đầy đủ: Thịt xào, mọc giòn, chả, riêu cua, tóp mỡ',
+    content: '0.7 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/2.png'),
+    img: require('../../assets/BoomDealIntro/2.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Quán Hương',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -216,11 +133,11 @@ const stories = [
     id: 7,
     id_order: 'DH_KJHUSMROS',
     title: 'Lẩu Bò Nhà Gỗ',
-    content: '300 gram bò, rau, củ, bún, mì',
+    content: '1.5 km',
     old_price: 58000,
     new_price: 45000,
     unit: 'đ',
-    img: require('../../../assets/BoomDealIntro/3.png'),
+    img: require('../../assets/BoomDealIntro/3.png'),
     id_shop: 'CH_SJNJVJDKKDN',
     name_shop: 'Nhà Gỗ Quán',
     address: 'Phường 4, Quận 5, TP. Hồ Chí Minh',
@@ -232,10 +149,10 @@ const stories = [
 ]
 
 const message = {
-    title: 'Giải cứu hàng bom',
-    discribe: 'Mỗi ngày có trung bình 30 - 40 đơn hàng bị bom, hãy cùng chúng tôi giúp đỡ các tài xế',
+    title: 'Deal hời',
+    discribe: 'Khám phá hàng triệu ưu đãi hấp dẫn cùng SHARKDELI. ',
     detail_button: 'Mua ngay',
-    img: require('../../../assets/BoomDealIntro/illustration.png')
+    img: require('../../assets/BoomDealIntro/illustration.png')
 }
 
 // Utility function to format price number
@@ -251,20 +168,20 @@ return price.format() + unit;
 
 const Header = (props) => {
     return (
-        <View style={styles.header}>
+        <View style={{...styles.header, marginBottom: 5, }}>
         <TouchableOpacity onPress={props.onPress} style={styles.iconButton}>
             <MaterialIcons name='arrow-back' size={25} color={color.black}/>
         </TouchableOpacity>
         <View style={styles.headerTitleContainer}>
             <Text style={styles.headerTitle}>
-            {props.title}
+                {props.title}
             </Text>
         </View>
         </View>
     );
 }
 
-const BoomDealListItem = (props) => {
+const HotDealListItem = (props) => {
   const item = props.item;
 
   return (
@@ -273,17 +190,13 @@ const BoomDealListItem = (props) => {
       <Image style={styles.itemImage} source={item.img} resizeMode='contain' />
       </View>
       <View style={styles.itemInfo}>
-        <Text style={styles.itemTitle}>{item.title}</Text>
+        <Text style={styles.itemTitle} numberOfLines={1}>{item.name_shop}</Text>
         <Text 
           style={styles.itemContent}
           numberOfLines={1}>
           {item.content}
         </Text>
         <View style={styles.itemPriceRow}>
-          <View style={styles.itemPrice}>
-            <Text style={styles.oldPrice}>{formatPrice(item.old_price, item.unit)}</Text>
-            <Text style={styles.newPrice}>{formatPrice(item.new_price, item.unit)}</Text>
-          </View>
           <View style={styles.itemBuyButton}>
             <Button 
               mode='contained' 
@@ -329,9 +242,9 @@ const Body = (props) => {
         numColumns={2}
         renderItem={({item}) => 
         <View style={styles.gridItemWrapper}>
-          <BoomDealListItem 
+          <HotDealListItem 
             item={item}
-            onDetailButtonPress={() => props.navigation.navigate('BoomDealDetail', {propItem: item})}
+            onDetailButtonPress={() => props.navigation.navigate('Orderscreen', {propItem: item})}
           />
         </View>}
         keyExtractor={(item, index) => item.id}
@@ -340,7 +253,7 @@ const Body = (props) => {
   )
 }
 
-export default BoomDealIntro = ({navigation}) => {
+export default HotDeal = ({navigation}) => {
 
   const onBackButtonPress = () => {
     // TODO: Return previous screen
@@ -365,7 +278,7 @@ const color = {
   grey: '#5B5F62',
   red: '#e93330',
   white: '#ffffff',
-  blue: '#00a6e4',
+  blue: '#e27602',
   green: '#08b13c',
   lightyellow: '#fff9e7'
 };
@@ -386,7 +299,7 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     fontSize: 18,
-    // fontWeight: 'bold',
+    fontWeight: 'bold',
     color: color.black
   },
 
@@ -478,7 +391,7 @@ const styles = StyleSheet.create({
 
   itemTitle: {
     fontSize: 15,
-    color: color.black
+    color: color.black,
   },
 
   itemContent: {

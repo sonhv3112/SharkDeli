@@ -198,7 +198,7 @@ const Footer = (props) => {
 
 }
 
-export const BoomDealReport = ({navigation}) => {
+const BoomDealReport = ({navigation}) => {
   const formik = useFormik({
     initialValues: {
       id_order: stories.id_order,
@@ -364,3 +364,5 @@ const styles = StyleSheet.create({
     marginTop: 10
   }
 });
+
+export default BoomDealReport;

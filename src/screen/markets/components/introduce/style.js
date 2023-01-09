@@ -3,14 +3,15 @@ import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   header: {
-    marginTop: 20,
     marginHorizontal: 10,
-    height: 20,
+    height: 40,
     alignItems: 'center',
+    justifyContent: 'center',
     flexDirection: 'row',
   },
   back: {
-    width: 10,
+    width: 20,
+    resizeMode: 'contain',
   },
   headerText: {
     flex: 1,
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   introduceText: {
-    fontSize: 15,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   introduceLeftBottom: {
