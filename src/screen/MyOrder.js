@@ -38,10 +38,35 @@ const OrderItem = (props) => {
         <TouchableOpacity style={{backgroundColor: '#fff', padding: 15, marginTop: 10, }}>
             <Text style={{color: '#01A6E4', fontWeight: 'bold', fontSize: 16, }}>{props.shop}</Text>
             <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
-            <View style={{flexDirection: 'row'}}>
-                <Text>{props.</Text>
+            <View style={{flexDirection: 'row', paddingLeft: 15, paddingRight: 15, marginTop: 7, }}>
+                <Text style={{marginRight: 25, }}>{props.items[0].num + 'x'}</Text>
+                <View style={{flexDirection: 'column'}}>
+                    <Text style={{color: 'black'}}>{props.items[0].type}</Text>
+                    <Text>{'Size ' + props.items[0].size + ',' + props.items[0].topping}</Text>
+                </View>
+                <Text style={{color: '#111', marginLeft: 'auto'}}>{String(props.items[0].price * props.items[0].num) + 'đ'}</Text>
             </View>
             <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
+            {
+                props.items.length > 1  ? 
+                    <>
+                        <Text style={{marginTop: 5, color: '#9F9A97', marginLeft: 'auto', marginRight: 'auto'}}>{'+ ' + String(props.items.length - 1) + ' món'}</Text>
+                        <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
+                    </>
+                 : 
+                    <>
+                    </>
+            }
+            <View style={{flexDirection: 'row', paddingLeft: 15, paddingRight: 15, marginTop: 7, }}>
+                <Text>{props.items.length + ' món'}</Text>
+                <Text style={{color: 'black', fontWeight: 'bold', marginLeft: 'auto', marginRight: 20, }}>Thành tiền</Text>
+                <Text style={{color: 'black', fontWeight: 'bold',}}>{props.items.reduce((total, item) => total + item.num * item.price, 0) + 'đ'}</Text>
+            </View>
+            <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
+            <View style={{paddingLeft: 15, paddingRight: 15, marginTop: 7, flexDirection: 'row', alignItems: 'center'}}>
+                <Text style={{color: '#01A6E4'}}>{props.status}</Text>
+                <MaterialIcons name='arrow-forward-ios' size={16} color='#9F9A97' style={{marginLeft: 'auto'}}/>
+            </View>
         </TouchableOpacity>
     );
 }
@@ -51,7 +76,26 @@ const MyOrder = ({navigation, route}) => {
         <SafeAreaView style={styles.container}>
             <Header navigation={navigation} />
             <StatusBar/>
-            <OrderItem shop='Trà Sữa Thế Giới' /> 
+            <OrderItem 
+                shop='Trà Sữa Thế Giới' 
+                items={[
+                    {
+                        num: 1, 
+                        type: 'Trà sữa khoai môn', 
+                        size: 'L', 
+                        topping: 'Thạch trái cây', 
+                        price: 20000, 
+                    }, 
+                    {
+                        num: 1, 
+                        type: 'Trà sữa khoai môn', 
+                        size: 'L', 
+                        topping: 'Thạch trái cây', 
+                        price: 20000, 
+                    }
+                ]}
+                status='Đang chờ người bán xác nhận'
+            /> 
         </SafeAreaView>
     ); 
 }
