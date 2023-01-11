@@ -33,14 +33,14 @@ const IconArray = [
 const DescElement = [
     "Deal hời", "Cơm", "Miến mì", "Fast food", 
     "Đồ uống", "Nước ngoài", "Đặc sản", "Đi chợ", 
-    "Hot pick", "Món chay", "Bếp nhà", "Quán quen",
-    "Đối tác SHARKDELI"
+    "Hot pick", "Món chay", "Bếp nhà", "Cửa hàng của tôi",
+    "Đối tác\nSHARKDELI"
 ]
 const NavPage = [
     "HotDeal", "Kitchens", "Kitchens", "Kitchens", 
     "Kitchens", "Kitchens", "Kitchens", "Markets", 
-    "Kitchens", "Kitchens", "Kitchens", "Kitchens", 
-    "HotDeal"
+    "Kitchens", "Kitchens", "Kitchens", "ImageFood", 
+    "OrderConfirmation"
 ]
 
 const dimensions = Dimensions.get('window');
@@ -55,7 +55,9 @@ const Header = (props) => {
             </Text>
             <ChevronRightIcon width={iconHeaderSize - 10} height={iconHeaderSize - 10} fill='#000' />
             <NotiIcon width={iconHeaderSize - 20} height={iconHeaderSize - 20} fill='#01A5E4' style={{ marginLeft: 'auto', marginRight: 10, }} onPress={() => console.log("Hello")}/>
-            <MenuIcon width={iconHeaderSize - 20} height={iconHeaderSize - 20} fill='#01A5E4' style={{ marginRight: 20, }} />
+            <TouchableOpacity onPress={() => props.navigation.navigate('Profile')}>
+                <MenuIcon width={iconHeaderSize - 20} height={iconHeaderSize - 20} fill='#01A5E4' style={{ marginRight: 20, }} />
+            </TouchableOpacity>
         </View>
     );
 }
@@ -75,7 +77,7 @@ const ElementTable = (props) => {
     return (
         <TouchableOpacity style={{...props.style, alignItems: 'center', justifyContent: 'center'}} onPress={props.onPress}>
             <props.icon width={props.style.height - 25} height={props.style.width - 25}/>
-            <Text style={{fontSize: props.style.fontSize, fontWeight: 'bold',  color: '#000'}}> 
+            <Text style={{fontSize: props.style.fontSize, fontWeight: 'bold',  color: '#000', textAlign: 'center'}}> 
                 { props.description }
             </Text>
         </TouchableOpacity>
@@ -103,10 +105,29 @@ const Table = (props) => {
                 <ElementTable icon={IconArray[8]} description={DescElement[8]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[8])}/>
                 <ElementTable icon={IconArray[9]} description={DescElement[9]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[9])}/>
                 <ElementTable icon={IconArray[10]} description={DescElement[10]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[10])}/>
-                <ElementTable icon={IconArray[11]} description={DescElement[11]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[11])}/>
+                <ElementTable icon={IconArray[11]} description={DescElement[11]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[11], {item: {id: '123', image:require('D:/React/SharkDeli/IMG/Tea.jpg'), name:'Phúc Long - Nguyễn Thị Minh Khai'}})}/>
             </View>
             <View style={{flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center'}}>
-                <ElementTable icon={IconArray[12]} description={DescElement[12]} style={{fontSize: 16, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[12])}/>
+                <ElementTable icon={IconArray[12]} description={DescElement[12]} style={{fontSize: 15, height: elementSize.height, width: elementSize.width}} onPress={() => props.navigation.navigate(NavPage[12], 
+                {item: { 
+                    isShipper: true, 
+                    id: '#37462', 
+                    ReceivingAddress: '252 Nguyễn Văn Cừ, q5, TP Hồ Chí Minh', 
+                    shop: 'Bún nước cô có, 25 Phan Đình Phùn, Phú Nhuận', 
+                    orders: [
+                            {
+                            name: 'Tré trộn đặc biệt',
+                            amount: 1,
+                            note: 'ít cay',
+                            ingredients: [{name: 'Chả cá', amount: 1}, {name: 'Trứng thêm', amount: 1}],
+                            },
+                            {
+                            name: 'Trà dâu',
+                            amount: 2,
+                            note: 'ít đá',
+                            ingredients: [],
+                            },
+                            ] }})}/>
             </View>
         </>
     )
@@ -157,7 +178,7 @@ const DealHot = (props) => {
 export const Home = ({navigation}) => {
     return (
         <ScrollView  style={styles.container}>
-            <Header style={{ marginTop: 10,}}/>
+            <Header style={{ marginTop: 10,}} navigation={navigation}/>
             <SearchBar style={{ marginTop: 20, marginBottom: 20, }} />
             <Table navigation={navigation}/>
             <BoomOrder style={{marginTop: 20, }} navigation={navigation}/>

@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { View, Image, ImageBackground, StyleSheet, Text, SafeAreaView, Dimensions, Alert, TouchableOpacity, TextInput } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
@@ -10,7 +11,7 @@ const Header = (props) => {
                 <MaterialIcons name='arrow-back' size={25} color='#000' backgroundColor='#fff'/>
             </TouchableOpacity>
             <Text style={{color: '#000', fontWeight: 'bold', fontSize: 18, }}>Đơn hàng của tôi</Text>
-            <TouchableOpacity onPress={()=>props.navigation.goBack()} >
+            <TouchableOpacity onPress={()=>{ console.log(123); props.navigation.goBack(); }} >
                 <MaterialIcons name='chat' size={25} color='#00A4E3'/>
             </TouchableOpacity>
         </View>
@@ -18,16 +19,18 @@ const Header = (props) => {
 }
 
 const StatusBar = (props) => { 
+    console.log(props); 
+
     return (
         <View style={{paddingLeft: 15, flexDirection: 'row', marginTop: 5, backgroundColor: '#fff', paddingTop: 8, paddingBottom: 8}}>
-            <TouchableOpacity style={{...styles.statusItem, backgroundColor: '#00A6E4'}}>
-                <Text style={{fontSize: 15, color: 'white'}}>Đang giao</Text>
+            <TouchableOpacity style={{...styles.statusItem, backgroundColor: props.status == 1 ? '#00A6E4' : '#fff', }} onPress={() => props.setStatus(1)}>
+                <Text style={{fontSize: 15, color: props.status == 1 ? 'white' : 'black'}}>Đang giao</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{...styles.statusItem}}>
-                <Text style={{fontSize: 15, color: 'black'}}>Đã giao</Text>
+            <TouchableOpacity style={{...styles.statusItem, backgroundColor: props.status == 2 ? '#08b13c' : '#fff', }} onPress={() => props.setStatus(2)}>
+                <Text style={{fontSize: 15, color: props.status == 2 ? 'white' : 'black'}}>Đã giao</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{...styles.statusItem}}>
-                <Text style={{fontSize: 15, color: 'black'}}>Đã hủy</Text>
+            <TouchableOpacity style={{...styles.statusItem, backgroundColor: props.status == 3 ? '#e93330' : '#fff', }} onPress={() => props.setStatus(3)}>
+                <Text style={{fontSize: 15, color: props.status == 3 ? 'white' : 'black'}}>Đã hủy</Text>
             </TouchableOpacity>
         </View>
     ); 
@@ -35,7 +38,7 @@ const StatusBar = (props) => {
 
 const OrderItem = (props) => { 
     return (
-        <TouchableOpacity style={{backgroundColor: '#fff', padding: 15, marginTop: 10, }}>
+        <TouchableOpacity style={{backgroundColor: '#fff', padding: 15, marginTop: 10, }} onPress={props.onPress}>
             <Text style={{color: '#01A6E4', fontWeight: 'bold', fontSize: 16, }}>{props.shop}</Text>
             <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
             <View style={{flexDirection: 'row', paddingLeft: 15, paddingRight: 15, marginTop: 7, }}>
@@ -64,7 +67,7 @@ const OrderItem = (props) => {
             </View>
             <View style={{borderTopWidth: 1, borderColor: '#efefef', marginTop: 7, }}/>
             <View style={{paddingLeft: 15, paddingRight: 15, marginTop: 7, flexDirection: 'row', alignItems: 'center'}}>
-                <Text style={{color: '#01A6E4'}}>{props.status}</Text>
+                <Text style={{color: props.textStatusColor}}>{props.status}</Text>
                 <MaterialIcons name='arrow-forward-ios' size={16} color='#9F9A97' style={{marginLeft: 'auto'}}/>
             </View>
         </TouchableOpacity>
@@ -72,30 +75,137 @@ const OrderItem = (props) => {
 }
 
 const MyOrder = ({navigation, route}) => {
+    const [status, setStatus] = useState(1);
+
     return (
         <SafeAreaView style={styles.container}>
-            <Header navigation={navigation} />
-            <StatusBar/>
-            <OrderItem 
-                shop='Trà Sữa Thế Giới' 
-                items={[
-                    {
-                        num: 1, 
-                        type: 'Trà sữa khoai môn', 
-                        size: 'L', 
-                        topping: 'Thạch trái cây', 
-                        price: 20000, 
-                    }, 
-                    {
-                        num: 1, 
-                        type: 'Trà sữa khoai môn', 
-                        size: 'L', 
-                        topping: 'Thạch trái cây', 
-                        price: 20000, 
-                    }
-                ]}
-                status='Đang chờ người bán xác nhận'
-            /> 
+            <Header navigation={navigation}/>
+            <StatusBar status={status} setStatus={setStatus}/>
+            <ScrollView>
+            {
+                status == 1 ? 
+                    <>
+                        <OrderItem 
+                            shop='Trà Sữa Thế Giới' 
+                            items={[
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }, 
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }
+                            ]}
+                            status='Đang chờ người bán xác nhận'
+                            textStatusColor='#00A6E4'
+                            // onPress={() => navigation.navigate('Comment')}
+                        />  
+                        
+                        <OrderItem 
+                            shop='Trà Sữa Thế Giới' 
+                            items={[
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }, 
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }
+                            ]}
+                            status='Đang chờ người bán xác nhận'
+                            textStatusColor='#00A6E4'
+                            // onPress={() => navigation.navigate('Comment')}
+                        />  
+                        
+                        <OrderItem 
+                            shop='Trà Sữa Thế Giới' 
+                            items={[
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }, 
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }
+                            ]}
+                            status='Đang chờ người bán xác nhận'
+                            textStatusColor='#00A6E4'
+                            // onPress={() => navigation.navigate('Comment')}
+                        />  
+                    </> 
+                    : status == 2 ?
+                    <>
+                        <OrderItem 
+                            shop='Phúc Long - Nguyễn Thị Minh Khai' 
+                            items={[
+                                {
+                                    num: 2, 
+                                    type: 'Trà sữa không đường', 
+                                    size: 'M', 
+                                    topping: 'Thạch trái cây, trân châu đường đen', 
+                                    price: 50000, 
+                                }, 
+                                {
+                                    num: 2, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 50000, 
+                                }
+                            ]}
+                            status='Đánh giá để nhận xu'
+                            textStatusColor='#F25C05'
+                            onPress={() => navigation.navigate('Comment')}
+                        />  
+                    </>
+                    :
+                    <>
+                        <OrderItem 
+                            shop='Trà Sữa Thế Giới' 
+                            items={[
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }, 
+                                {
+                                    num: 1, 
+                                    type: 'Trà sữa khoai môn', 
+                                    size: 'L', 
+                                    topping: 'Thạch trái cây', 
+                                    price: 20000, 
+                                }
+                            ]}
+                            status='Đã hủy'
+                            textStatusColor='#e93330'
+                            onPress={() => navigation.navigate('Comment')}
+                        />  
+                    </>
+            }
+            </ScrollView>
         </SafeAreaView>
     ); 
 }

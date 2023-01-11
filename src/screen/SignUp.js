@@ -46,7 +46,7 @@ export const SignUp = ({navigation}) => {
 		<Text style={styles.textForm}>
 			Chọn vai trò
 		</Text>
-		<TextInput style={styles.textInputForm} placeholder='Re-password'/>
+		<TextInput style={styles.textInputForm} placeholder='Your role'/>
 
 		<TouchableOpacity style={styles.submitButton} onPress={() => navigation.goBack()}>
 			<Text style={styles.textSubmit}> Đăng ký </Text>    
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 		color: '#EEB5EB',
 		width: '100%', 
 		textAlign: 'center', 
-		marginBottom: 30,
+		marginBottom: 20,
 	},
 	description: { 
 		color: '#4D4543', 

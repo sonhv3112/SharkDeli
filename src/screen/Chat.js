@@ -60,7 +60,7 @@ const updateMess = () => {
       }
 }
   return (
-     <SafeAreaView>
+     <SafeAreaView style={{flex: 1, }}>
          <View style={{...styles.titleHeader, alignItems: 'center',}}>
          <TouchableOpacity style={{}} onPress={()=>navigation.goBack()}>
             <AntDesign name='arrowleft' style={{fontSize:22, marginRight:20,paddingTop: 10, marginLeft:10}}></AntDesign>

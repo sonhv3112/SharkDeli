@@ -1,0 +1,99 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h48v48h-48z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp2">
+			<path d="m8.45 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp3">
+			<path d="m8.45 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp4">
+			<path d="m8.45 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp5">
+			<path d="m8.45 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp6">
+			<path d="m17.24 14.2h12.51v12.17h-12.51z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp7">
+			<path d="m17.24 14.2h12.51v12.17h-12.51z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp8">
+			<path d="m17.24 14.2h12.51v12.17h-12.51z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp9">
+			<path d="m17.24 14.2h12.51v12.17h-12.51z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp10">
+			<path d="m31.1 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp11">
+			<path d="m31.1 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp12">
+			<path d="m31.1 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp13">
+			<path d="m31.1 21.3h8.79v8.11h-8.79z"/>
+		</clipPath>
+	</defs>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer">
+			<path id="Layer" fill-rule="evenodd" d="m24 44q-4.1 0-7.8-1.6-3.6-1.6-6.3-4.3-2.7-2.7-4.3-6.3-1.6-3.7-1.6-7.8 0-4.1 1.6-7.8 1.6-3.6 4.3-6.3 2.7-2.8 6.3-4.3 3.7-1.6 7.8-1.6 4.2 0 7.8 1.6 3.7 1.5 6.3 4.3 2.8 2.7 4.3 6.3 1.6 3.7 1.6 7.8 0 4.1-1.6 7.8-1.5 3.6-4.3 6.3-2.6 2.7-6.3 4.3-3.6 1.6-7.8 1.6zm0-3q7.1 0 12.1-5 4.9-5 4.9-12 0-7.1-4.9-12.1-5-4.9-12.1-4.9-7 0-12 4.9-5 5-5 12.1 0 7 5 12 5 5 12 5z"/>
+			<g id="Clip-Path" clip-path="url(#cp2)">
+				<g id="Layer">
+					<g id="Clip-Path" clip-path="url(#cp3)">
+						<g id="Layer">
+							<g id="Clip-Path" clip-path="url(#cp4)">
+								<g id="Layer">
+									<g id="Clip-Path" clip-path="url(#cp5)">
+										<g id="Layer">
+											<path id="Layer" d="m12.7 21.3q0.1 0 0.2 0 0.1 0.1 0.1 0.2l1 2.4 2.6 0.2q0.1 0 0.2 0.1 0.1 0.1 0.1 0.2 0 0.1 0 0.2 0 0.1-0.1 0.1l-2 1.7 0.6 2.6q0 0.1 0 0.2 0 0.1-0.1 0.1-0.1 0.1-0.2 0.1-0.1 0-0.2 0l-2.2-1.4-2.2 1.4q-0.1 0-0.2 0-0.1 0-0.2-0.1-0.1 0-0.1-0.1-0.1-0.1-0.1-0.2l0.6-2.6-1.9-1.7q-0.1 0-0.1-0.1-0.1-0.1 0-0.2 0-0.1 0.1-0.2 0.1-0.1 0.2-0.1l2.5-0.2 1-2.4q0.1-0.1 0.2-0.2 0.1 0 0.2 0z"/>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="Clip-Path" clip-path="url(#cp6)">
+				<g id="Layer">
+					<g id="Clip-Path" clip-path="url(#cp7)">
+						<g id="Layer">
+							<g id="Clip-Path" clip-path="url(#cp8)">
+								<g id="Layer">
+									<g id="Clip-Path" clip-path="url(#cp9)">
+										<g id="Layer">
+											<path id="Layer" d="m23.5 14.5q0.1 0 0.3 0.1 0.1 0.1 0.2 0.2l1.5 3.5 3.8 0.4q0.1 0 0.3 0.1 0.1 0.1 0.1 0.2 0.1 0.1 0 0.3 0 0.1-0.1 0.3l-2.9 2.4 0.8 3.7q0.1 0.2 0 0.3 0 0.2-0.2 0.3-0.1 0.1-0.2 0.1-0.2 0-0.3-0.1l-3.3-2-3.3 2q-0.1 0.1-0.3 0.1-0.1 0-0.3-0.1-0.1-0.1-0.1-0.3-0.1-0.1-0.1-0.3l0.9-3.7-2.9-2.4q-0.1-0.2-0.1-0.3-0.1-0.2 0-0.3 0-0.1 0.1-0.2 0.1-0.1 0.3-0.1l3.8-0.4 1.5-3.5q0.1-0.1 0.2-0.2 0.2-0.1 0.3-0.1z"/>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g id="Clip-Path" clip-path="url(#cp10)">
+				<g id="Layer">
+					<g id="Clip-Path" clip-path="url(#cp11)">
+						<g id="Layer">
+							<g id="Clip-Path" clip-path="url(#cp12)">
+								<g id="Layer">
+									<g id="Clip-Path" clip-path="url(#cp13)">
+										<g id="Layer">
+											<path id="Layer" d="m35.3 21.3q0.1 0 0.2 0 0.1 0.1 0.2 0.2l1 2.4 2.5 0.2q0.1 0 0.2 0.1 0.1 0.1 0.1 0.2 0.1 0.1 0 0.2 0 0.1-0.1 0.1l-1.9 1.7 0.6 2.6q0 0.1-0.1 0.2 0 0.1-0.1 0.1-0.1 0.1-0.2 0.1-0.1 0-0.2 0l-2.2-1.4-2.2 1.4q-0.1 0-0.2 0-0.1 0-0.2-0.1-0.1 0-0.1-0.1 0-0.1 0-0.2l0.6-2.6-2-1.7q-0.1 0-0.1-0.1 0-0.1 0-0.2 0-0.1 0.1-0.2 0.1-0.1 0.2-0.1l2.6-0.2 1-2.4q0-0.1 0.1-0.2 0.1 0 0.2 0z"/>
+										</g>
+									</g>
+								</g>
+							</g>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

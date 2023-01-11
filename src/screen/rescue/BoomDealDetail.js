@@ -309,7 +309,7 @@ export default BoomDealDetail = ({navigation, route}) => {
     <View style={styles.container}>
       <Header onPress={onBackButtonPress}/>
       <Body item={item} />
-      <Footer item={item} onPress={onBuyButtonPress}/>
+      <Footer item={item} onPress={() => { navigation.navigate('PayScreen') }}/>
     </View>
   );
 }

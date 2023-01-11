@@ -162,25 +162,27 @@ const StoreReport = ({navigation}) => {
           // TODO: Using formik to handle form value
           // TODO: Linking to previous screen
           // TODO: Insert url of server
-          axios({
-            method: 'post',
-            url: '',
-            data: {
-              id_shop: value.id_shop,
-              problems: value.problems
-            }
-          }) 
-          .then(response => {
-            console.log(response);
-          })
-          .catch(err => {
-            Alert.alert('An error occurred!', err.message, [{ text: 'Okay' }]);
-          })
+          // axios({
+          //   method: 'post',
+          //   url: '',
+          //   data: {
+          //     id_shop: value.id_shop,
+          //     problems: value.problems
+          //   }
+          // }) 
+          // .then(response => {
+          //   console.log(response);
+          // })
+          // .catch(err => {
+          //   Alert.alert('An error occurred!', err.message, [{ text: 'Okay' }]);
+          // })
+          Alert.alert('Báo cáo cửa hàng thành công');
+          navigation.navigate('Home');
         }
       });
     
       const onBackButtonPress = () => {
-        // TODO: Return previous screen
+        navigation.goBack();
       }
     
       console.log("loading")

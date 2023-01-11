@@ -10,7 +10,13 @@ const background = require('../../assets/background.png');
 const dimensions = Dimensions.get('window');
 const svg_height = Math.round(dimensions.height * 0.5);
 
-export const Login = ({navigation}) => {
+export const Login = ({navigation}) => {	
+	const authenticate = (username, password) => { 
+		if (username == 'admin' && password == 'admin')
+			return true; 
+		return false; 
+	}
+
   return (
 	<SafeAreaView style={styles.container}>
 		<View style={{position: 'absolute', backgroundColor: "#00A4E3", height: 400, width: '100%'}}/>
@@ -46,7 +52,9 @@ export const Login = ({navigation}) => {
 		</Text>
 		<TextInput style={styles.textInputForm} placeholder='Password'/>
 
-		<TouchableOpacity style={styles.submitButton} onPress={() => { navigation.navigate('Home') }}>
+		<TouchableOpacity style={styles.submitButton} onPress={() => { 
+			navigation.navigate('Home') 
+			}}>
 			<Text style={styles.textSubmit}> Đăng nhập </Text>    
 		</TouchableOpacity>
     </SafeAreaView>
@@ -126,8 +134,7 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		marginBottom: 15, 
 		alignItems: 'center', 
-		position: 'absolute',
-		bottom: 10, 
+		marginTop: 30, 
 	}, 
 	textSubmit: {
 		fontSize: 16, 
